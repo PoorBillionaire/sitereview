@@ -31,7 +31,7 @@ Sample results, for a known-malicious domain:
 
 ```
 ======================
-BlueCoat Site Review
+Blue Coat Site Review
 ======================
 
 URL: http://brins.biz/
