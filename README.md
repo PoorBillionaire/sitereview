@@ -1,13 +1,15 @@
 # sitereview
-Bluecoat SiteReview Checker (CLI)
+Blue Coat Site Review Checker (CLI)
 
 # Description
 
 Site Review can best be described by Blue Coat itself:
 
-*The purpose of Site Review is to allow Blue Coat customers to check the current categorization of WebPulse URL ratings and report sites that they believe are incorrectly categorized.*
+*"The purpose of Site Review is to allow Blue Coat customers to check the current categorization of WebPulse URL ratings and report sites that they believe are incorrectly categorized."*
 
-This Python script focuses on the first portion, allowing Blue Coat customers to quickly query the Site Review service via the CLI.
+https://sitereview.bluecoat.com/sitereview.jsp
+
+This Python script focuses on the first portion, allowing Blue Coat customers to quickly query the Site Review service via the CLI. This script can be run stand-alone, or imported as a module to extend the functionality of another script.
 
 # Usage
 
@@ -17,9 +19,21 @@ Sitereview.py simply takes one mandatory positional argument, url, and submits i
 usage: sitereview.py [-h] url
 
 positional arguments:
-  url         Submit domain/URL to BlueCoat's SiteReview
+  url         Submit domain/URL to Blue Coat's Site Review
 
 optional arguments:
   -h, --help  show this help message and exit
 ```
+
+# Results
+
+Sample results, for a known-malicious domain:
+
+======================
+BlueCoat Site Review
+======================
+
+URL: http://brins.biz/
+Last Reviewed: Last Time Rated/Reviewed:  > 7 days
+Category: Malicious Sources/Malnets
 

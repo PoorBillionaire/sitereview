@@ -39,6 +39,7 @@ class SiteReview(object):
             self.url = response["url"]
 
 
+
 def main(url):
     s = SiteReview()
     response = s.sitereview(url)
@@ -55,7 +56,7 @@ def main(url):
 
 if __name__ == "__main__":
     p = ArgumentParser()
-    p.add_argument("url", help="Submit domain/URL to BlueCoat's SiteReview")
+    p.add_argument("url", help="Submit domain/URL to Blue Coat's Site Review")
     args = p.parse_args()
 
     main(args.url)
