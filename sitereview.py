@@ -46,7 +46,7 @@ def main(url):
     s.check_response(response)
     border = "=" * (len("BlueCoat Site Review") + 2)
 
-    print "\n{0}\n{1}\n{0}\n".format(border, "BlueCoat Site Review")
+    print "\n{0}\n{1}\n{0}\n".format(border, "Blue Coat Site Review")
     print "URL: {}\nLast Reviewed: {}\nCategory: {}\n".format(
                                                               s.url,
                                                               s.date,
