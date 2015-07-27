@@ -38,3 +38,13 @@ URL: http://brins.biz/
 Last Reviewed: Last Time Rated/Reviewed:  > 7 days
 Category: Malicious Sources/Malnets
 ```
+
+# Python Requirements
+
+```
+argparse
+bs4
+json
+requests
+sys
+```
