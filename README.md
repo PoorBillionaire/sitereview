@@ -1,7 +1,7 @@
 # sitereview
 Blue Coat Site Review Checker (CLI)
 
-# Description
+###Description
 
 Site Review can best be described by Blue Coat itself:
 
@@ -11,7 +11,7 @@ https://sitereview.bluecoat.com/sitereview.jsp
 
 This Python script focuses on the first portion, allowing Blue Coat customers to quickly query the Site Review service via the CLI. This script can be run stand-alone, or imported as a module to extend the functionality of another script.
 
-# Usage
+###Usage
 
 Sitereview.py simply takes one mandatory positional argument, url, and submits it to the Site Review service:
 
@@ -25,7 +25,7 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
-# Results
+###Results
 
 Sample results, for a known-malicious domain:
 
@@ -39,12 +39,11 @@ Last Reviewed: Last Time Rated/Reviewed:  > 7 days
 Category: Malicious Sources/Malnets
 ```
 
-# Python Requirements
+###Python Requirements
 
-```
-argparse
-bs4
-json
-requests
-sys
-```
+* argparse
+* bs4
+* json
+* requests
+* sys
+
