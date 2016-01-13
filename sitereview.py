@@ -34,8 +34,8 @@ class SiteReview(object):
             sys.exit(response["error"])
 
         else:
-            self.category = BeautifulSoup(response["categorization"]).get_text()
-            self.date = BeautifulSoup(response["ratedate"]).get_text()[0:35]
+            self.category = BeautifulSoup(response["categorization"], "lxml").get_text()
+            self.date = BeautifulSoup(response["ratedate"], "lxml").get_text()[0:35]
             self.url = response["url"]
 
 
@@ -47,7 +47,7 @@ def main(url):
     border = "=" * (len("BlueCoat Site Review") + 2)
 
     print "\n{0}\n{1}\n{0}\n".format(border, "Blue Coat Site Review")
-    print "URL: {}\nLast Reviewed: {}\nCategory: {}\n".format(
+    print "URL: {}\n{}\nCategory: {}\n".format(
                                                               s.url,
                                                               s.date,
                                                               s.category
