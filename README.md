@@ -35,7 +35,7 @@ Blue Coat Site Review
 ======================
 
 URL: http://brins.biz/
-Last Reviewed: Last Time Rated/Reviewed:  > 7 days
+Last Time Rated/Reviewed:  > 7 days
 Category: Malicious Sources/Malnets
 ```
 
