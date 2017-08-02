@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 from argparse import ArgumentParser
 from bs4 import BeautifulSoup
 import json
@@ -12,18 +14,18 @@ class SiteReview(object):
 
     def sitereview(self, url):
         payload = {"url": url}
-        
+
         try:
             self.req = requests.post(
-                                    self.baseurl,
-                                    headers=self.useragent,
-                                    data=payload
-                                    )
+                self.baseurl,
+                headers=self.useragent,
+                data=payload
+            )
         except requests.ConnectionError:
             sys.exit("[-] ConnectionError: " \
                      "A connection error occurred")
 
-        return json.loads(self.req.content)
+        return json.loads(self.req.content.decode("UTF-8"))
 
     def check_response(self, response):
 
@@ -46,12 +48,13 @@ def main(url):
     s.check_response(response)
     border = "=" * (len("BlueCoat Site Review") + 2)
 
-    print "\n{0}\n{1}\n{0}\n".format(border, "Blue Coat Site Review")
-    print "URL: {}\n{}\nCategory: {}\n".format(
-                                                              s.url,
-                                                              s.date,
-                                                              s.category
-                                                              )
+    print("\n{0}\n{1}\n{0}\n".format(border, "Blue Coat Site Review"))
+    print("URL: {}\n{}\nCategory: {}\n".format(
+        s.url,
+        s.date,
+        s.category
+        )
+    )
 
 
 if __name__ == "__main__":
@@ -60,6 +63,3 @@ if __name__ == "__main__":
     args = p.parse_args()
 
     main(args.url)
-
-else:
-    pass
