@@ -46,4 +46,5 @@ Category: Malicious Sources/Malnets
 * json
 * requests
 * sys
+* lxml
 
