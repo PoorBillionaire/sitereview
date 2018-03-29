@@ -41,7 +41,7 @@ def main(url):
     s = SiteReview()
     response = s.sitereview(url)
     s.check_response(response)
-    border = "=" * (len("BlueCoat Site Review") + 2)
+    border = "=" * (len("Symantec Site Review") + 2)
 
     print("\n{0}\n{1}\n{0}\n".format(border, "Symantec Site Review"))
     print("URL: {}\n{}\nCategory: {}\n".format(
@@ -54,7 +54,7 @@ def main(url):
 
 if __name__ == "__main__":
     p = ArgumentParser()
-    p.add_argument("url", help="Submit domain/URL to Blue Coat's Site Review")
+    p.add_argument("url", help="Submit domain/URL to Symantec's Site Review")
     args = p.parse_args()
 
     main(args.url)
