@@ -38,6 +38,11 @@ URL: http://brins.biz/
 Last Time Rated/Reviewed:  > 7 days
 Category: Malicious Sources/Malnets
 ```
+### Installation
+
+```
+python setup.py install
+```
 
 ### Python Requirements
 
