@@ -9,17 +9,17 @@ import sys
 
 class SiteReview(object):
     def __init__(self):
-        self.baseurl = "http://sitereview.bluecoat.com/rest/categorization"
-        self.useragent = {"User-Agent": "Mozilla/5.0"}
+        self.baseurl = "https://sitereview.bluecoat.com/resource/lookup"
+        self.headers = {"User-Agent": "Mozilla/5.0", "Content-Type": "application/json"}
 
     def sitereview(self, url):
-        payload = {"url": url}
-
+        payload = {"url": url, "captcha":""}
+        
         try:
             self.req = requests.post(
                 self.baseurl,
-                headers=self.useragent,
-                data=payload
+                headers=self.headers,
+                data=json.dumps(payload),
             )
         except requests.ConnectionError:
             sys.exit("[-] ConnectionError: " \
@@ -28,16 +28,11 @@ class SiteReview(object):
         return json.loads(self.req.content.decode("UTF-8"))
 
     def check_response(self, response):
-
         if self.req.status_code != 200:
             sys.exit("[-] HTTP {} returned".format(req.status_code))
-
-        elif "error" in response:
-            sys.exit(response["error"])
-
         else:
-            self.category = BeautifulSoup(response["categorization"], "lxml").get_text()
-            self.date = BeautifulSoup(response["ratedate"], "lxml").get_text()[0:35]
+            self.category = response["categorization"][0]["name"]
+            self.date = response["translatedRateDates"][0]["text"][0:35]
             self.url = response["url"]
 
 
@@ -48,7 +43,7 @@ def main(url):
     s.check_response(response)
     border = "=" * (len("BlueCoat Site Review") + 2)
 
-    print("\n{0}\n{1}\n{0}\n".format(border, "Blue Coat Site Review"))
+    print("\n{0}\n{1}\n{0}\n".format(border, "Symantec Site Review"))
     print("URL: {}\n{}\nCategory: {}\n".format(
         s.url,
         s.date,
